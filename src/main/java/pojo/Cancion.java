@@ -7,7 +7,7 @@ package pojo;
 
 /**
  *
- * @author AndresChila
+ * @author Eduard Fierro
  */
 public class Cancion {
     private String nombre;

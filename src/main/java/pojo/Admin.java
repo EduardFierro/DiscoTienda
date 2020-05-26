@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author AndresChila
+ * @author Eduard Fierro
  */
 public class Admin implements Serializable{
     private String usuario, clave;

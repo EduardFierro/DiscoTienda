@@ -3,26 +3,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      >
     <h:head>
+       
         <title>Inicio</title>
     </h:head>
-    <style type="text/css">
-        .ui-panelgrid.showcase-text-align-center .ui-grid-responsive .ui-panelgrid-cell {
-            text-align: center;
-        }
-
-        .customPanelGrid .ui-panelgrid-content {
-            align-items: center;
-        }
-    </style>
+    
     <h:body>
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        
         <p:panel style="widt:400px; height:590px;" >
             <h:form>
-                <center><font  face="arial" size="8" color="white"><p:outputLabel value="bienvenido " /> </font></center>
                 
-                <br></br>*********************************************************************************************************************<br></br>
+                <center><font  face="arial" size="8" color="white"><p:outputLabel value="Bienvenido " /> </font></center>
+                
                 <font face="arial" size="5">
+                    
                     <p:panelGrid columns="2" layout="grid" styleClass="showcase-text-align-center">
                         <p:outputLabel value="Inicio Administrador" /> 
 
@@ -30,7 +28,7 @@
                         <p:commandButton style="color:cyan;" immediate="true" action="loginAdmin.xhtml" value="Iniciar"/>
                         <p:inputText value="#{inicio.nombre}"  required="true"/>
                         <p:outputLabel value="" /> 
-                        <p:commandButton value="Ingresar" action="#{inicio.iniciaSesion()}" />
+                        <p:commandButton style="color:cyan;" value="Ingresar" action="#{inicio.iniciaSesion()}" />
                     </p:panelGrid>
                 </font>
             </h:form>

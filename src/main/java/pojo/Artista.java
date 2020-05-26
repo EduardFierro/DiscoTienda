@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author AndresChila
+ * @author Eduard Fierro
  */
 public class Artista {
     private String nombre;
