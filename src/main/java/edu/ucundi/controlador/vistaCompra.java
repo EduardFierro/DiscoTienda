@@ -100,7 +100,7 @@ public class vistaCompra implements Serializable{
         total = logica.getTotal();
         return ("recibo.xhtml");
     }
-    public String LimpiarLista(){
+    public String limpiarLista(){
         compra.clear();
         return("inicio.xhtml");
     }

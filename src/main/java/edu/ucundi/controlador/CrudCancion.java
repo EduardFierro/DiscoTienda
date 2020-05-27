@@ -15,6 +15,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import pojo.Cancion;
 import pojo.Album;
+import pojo.Artista;
 
 /**
  *
@@ -38,6 +39,8 @@ public class CrudCancion implements Serializable {
 
     @PostConstruct
     public void init() {
+        
+       // Cancion c = new Cancion(rtista);
         FacesContext context = FacesContext.getCurrentInstance();
         if (context.getExternalContext().getSessionMap().get("listaCanciones") == null) {
             listaCanciones = new ArrayList<>();

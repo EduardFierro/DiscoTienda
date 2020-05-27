@@ -14,11 +14,13 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
         <h:form>
 
 
             <p:panelGrid id="pa" columns="1">
-                <p:panel id="pan">
+                <p:panel  class="pf-panel-bd" id="pan">
                     <p:dataTable id="cancionescompra" var="car" value="#{vistaCompra.compra}" style="margin-bottom:20px">
                         <f:facet name="header"> #{mensaje.canciones} </f:facet>
 

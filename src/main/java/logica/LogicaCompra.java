@@ -33,22 +33,7 @@ public class LogicaCompra {
     public LogicaCompra() {
 
     }
-    /*public void porArtista(List<Artista>listaArtistas, List<String> nombreArtistas, List<String> compra){
-     this.listaArtistas = listaArtistas;
-     this.nombreArtistas = nombreArtistas;
-     this.compra = compra;
-     }
-     public void porDisco(List<Disco>listaDiscos, List<String> nombreDiscos, List<String> compra){
-     this.listaDiscos = listaDiscos;
-     this.nombreDiscos = nombreDiscos;
-     this.compra = compra;
-     }
-     public void porCancion(List<Cancion>listaCanciones, List<String> nombreCanciones, List<String> compra){
-     this.listaCanciones = listaCanciones;
-     this.nombreCanciones = nombreCanciones;
-     this.compra = compra;
-     }*/
-
+  
     public void compraPorArtista(Artista art) {
         for (Artista a : listaArtistas) {
             if (a.getNombre().equals(art.getNombre())) {

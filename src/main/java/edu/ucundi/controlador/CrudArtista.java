@@ -45,7 +45,7 @@ public class CrudArtista implements Serializable {
         
     }
     public void agregaArtista(){
-        Artista art = new Artista(nombre, apellido, fechana, apellido);
+        Artista art = new Artista(nombre, apellido, fechana);
         lista.add(art);
         FacesContext context = FacesContext.getCurrentInstance();
         context.getExternalContext().getSessionMap().put("listaArtista", this.getLista());

@@ -87,7 +87,7 @@ public class LogicaCrudArtista {
             for(int i=0;i<palabra.length;i++){
                 String bufer[] = palabra[i].split(",");
                 album = new Album(bufer[0], bufer[1]);
-                if(bufer[2].equals(artista.getNombre()))
+                if(bufer[1].equals(artista.getNombre()))
                 listaAlbum.add(album);
             }
         }

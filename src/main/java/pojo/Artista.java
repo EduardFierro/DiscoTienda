@@ -16,14 +16,14 @@ public class Artista {
     private String nombre;
     private String apellido;
     private Date fechana;
-    private String nacionalidad;
+   
     
 
-    public Artista(String nombre, String apellido, Date fechana, String nacionalidad) {
+    public Artista(String nombre, String apellido, Date fechana) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechana = fechana;
-        this.nacionalidad = nacionalidad;
+      
         
     }
 
@@ -51,11 +51,4 @@ public class Artista {
         this.fechana = fechana;
     }
 
-    public String getNacionalidad() {
-        return nacionalidad;
-    }
-
-    public void setNacionalidad(String nacionalidad) {
-        this.nacionalidad = nacionalidad;
-    }
 }
