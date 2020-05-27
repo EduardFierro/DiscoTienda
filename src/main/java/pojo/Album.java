@@ -11,25 +11,14 @@ import java.util.List;
  *
  * @author Eduard Fierro
  */
-public class Disco {
-    private String imagen;
+public class Album {
+
     private String nombre;
     private String artista;
-    
 
-    public Disco(String imagen, String nombre, String artista) {
-        this.imagen = imagen;
+    public Album(String nombre, String artista) {
         this.nombre = nombre;
         this.artista = artista;
-        
-    }
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
     }
 
     public String getNombre() {
@@ -46,5 +35,6 @@ public class Disco {
 
     public void setArtista(String artista) {
         this.artista = artista;
-    }    
+    }
+
 }

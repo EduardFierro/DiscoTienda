@@ -13,13 +13,13 @@ public class Cancion {
     private String nombre;
     private String duracion;
     private double precio;
-    private String disco;
+    private String album;
 
-    public Cancion(String nombre, String duracion, double precio, String disco) {
+    public Cancion(String nombre, String duracion, double precio, String album) {
         this.nombre = nombre;
         this.duracion = duracion;
         this.precio = precio;
-        this.disco = disco;
+        this.album = album;
     }
 
     public String getNombre() {
@@ -46,12 +46,12 @@ public class Cancion {
         this.precio = precio;
     }
 
-    public String getDisco() {
-        return disco;
+    public String getAlbum() {
+        return album;
     }
 
-    public void setDisco(String disco) {
-        this.disco = disco;
+    public void setAlbum(String album) {
+        this.album = album;
     }
     
 }
