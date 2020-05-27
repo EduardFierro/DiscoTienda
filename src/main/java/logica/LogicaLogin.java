@@ -22,7 +22,7 @@ public class LogicaLogin {
     }
     
     public void loguearse(){
-        //LecturaFichero();
+        
         FacesContext context = FacesContext.getCurrentInstance();
         Admin adm = (Admin) context.getExternalContext().getSessionMap().get("admin");
         if(adm.getUsuario().equals(usuario) && adm.getClave().equals(clave)){

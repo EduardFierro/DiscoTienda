@@ -33,7 +33,7 @@ public class inicio implements Serializable{
     
     @PostConstruct
     public void creaAdmin(){
-        Admin admin = new Admin("admin", "12345");
+        Admin admin = new Admin("admin", "1234");
         FacesContext context = FacesContext.getCurrentInstance();
         context.getExternalContext().getSessionMap().put("admin", admin);
     }

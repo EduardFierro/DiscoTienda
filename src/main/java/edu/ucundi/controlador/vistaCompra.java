@@ -19,7 +19,7 @@ import pojo.Album;
 
 /**
  *
- * @author AndresChila
+ * @author Eduard Fierro
  */
 @ManagedBean(name = "vistaCompra")
 @ViewScoped
@@ -81,7 +81,7 @@ public class vistaCompra implements Serializable{
         compra = logica.getCompra();
     }
 
-    public void agregarCarritoPorDisco(Album album) {
+    public void agregarCarritoPorAlbum(Album album) {
         LogicaCompra logica = new LogicaCompra(listaCanciones, listaAlbum, listaArtistas, compra);
         logica.compraPorAlbum(album);
         compra = logica.getCompra();

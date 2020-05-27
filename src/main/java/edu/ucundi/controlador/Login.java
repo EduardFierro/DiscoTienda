@@ -17,7 +17,7 @@ import pojo.Admin;
 
 /**
  *
- * @author AndresChila
+ * @author Eduard Fierro
  */
 @ManagedBean(name = "userLoginView")
 @SessionScoped
