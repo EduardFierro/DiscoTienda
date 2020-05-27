@@ -15,7 +15,7 @@
         <p:panel style="widt:400px; height:590px;">
             <h:form>
                 
-                <center><font  face="arial" size="8" color="skype-blue"><p:outputLabel value="Inicio Sesion" /> </font></center>
+                <center><font  face="arial" size="8" color="lime"><p:outputLabel value="InicioSesion" /> </font></center>
                 <br></br>
                 <br></br>
                 <br></br>
@@ -29,7 +29,7 @@
                         <h:outputLabel for="password" value="clave" />
                         <p:password id="password" value="#{userLoginView.password}" required="true" label="password" />
                         <br></br>
-                        <p:commandButton value="Inicio Sesion" update="growl" action="#{userLoginView.loguearse()}"
+                        <p:commandButton value="InicioSesion" update="growl" action="#{userLoginView.loguearse()}"
                                          oncomplete="handleLoginRequest(xhr, status, args)" />
                         <br></br>
                     </p:panelGrid>

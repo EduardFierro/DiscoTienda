@@ -8,8 +8,7 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core" >
+      xmlns:p="http://primefaces.org/ui" >
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -25,21 +24,21 @@ and open the template in the editor.
                 <div  id="menu">
                     <h:form>
 
-                            <p:panelMenu style="width:300px">
-                                <p:submenu label="canciones">
-                                    <p:menuitem value="Agregar Cancion" action="crudCancion.xhtml" style="color:white;"/>
-                                </p:submenu>
-                                <p:submenu label="artistas">
-                                    <p:menuitem value="Agregar Artista" action="crudArtista.xhtml" style="color:white;"/>
-                                </p:submenu>
-                                <p:submenu label="Album">
-                                    <p:menuitem value="Agregar Album" action="crudAlbum.xhtml" style="color:white;" />
-                                </p:submenu>
-                                <p:submenu label="cerrarSesion"  style="color:white;">
-                                    <p:menuitem value="#cerrarSesion" action="inicio.xhtml"/>
-                                </p:submenu>
-                            </p:panelMenu>
-                        </font>
+                        <p:panelMenu style="width:300px">
+                            <p:submenu label="canciones">
+                                <p:menuitem value="Agregar Cancion" action="crudCancion.xhtml" style="color:white;"/>
+                            </p:submenu>
+                            <p:submenu label="artistas">
+                                <p:menuitem value="Agregar Artista" action="crudArtista.xhtml" style="color:white;"/>
+                            </p:submenu>
+                            <p:submenu label="Album">
+                                <p:menuitem value="Agregar Album" action="crudAlbum.xhtml" style="color:white;" />
+                            </p:submenu>
+                            <p:submenu label="cerrarSesion"  style="color:white;">
+                                <p:menuitem value="#cerrarSesion" action="inicio.xhtml"/>
+                            </p:submenu>
+                        </p:panelMenu>
+
                     </h:form>
                 </div>
             </ui:insert>

@@ -4,18 +4,11 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">>
-    <style type="text/css">
-        .ui-panelgrid.showcase-text-align-center .ui-grid-responsive .ui-panelgrid-cell {
-            text-align: center;
-        }
-
-        .customPanelGrid .ui-panelgrid-content {
-            align-items: center;
-        }
-    </style>
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:body>
-
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
         <ui:composition template="./Templates/plantillaMenu.xhtml">
 
             <ui:define name="content">
@@ -28,14 +21,14 @@
                         </font>   
                         <font face="arial" size="3" color="white">
                             <p:panelGrid  columns="2" layout="tabular" styleClass="showcase-text-align-center" >
-                                <p:outputLabel value="Nombre Artista " />
-                                <p:inputText id="nombre" required="true" value="#{crudAlbum.nombre}" label="Nombre Artista"/>
+                                <p:outputLabel value="Nombre Album " />
+                                <p:inputText id="nombre" required="true" value="#{crudAlbum.nombre}" label="Nombre Album"/>
 
                                 <p:outputLabel value="Artista Album" />
                                 <p:selectOneMenu id="artista"  value="#{crudAlbum.artista}" style="width:125px">
                                     <f:selectItems  value="#{crudAlbum.nombresArtistas}"/>
                                 </p:selectOneMenu>
-                              
+
                             </p:panelGrid>
                             <br></br>
                             <center>
@@ -55,14 +48,14 @@
                                     <p:ajax event="rowEdit"  update=":form:msgs" />
                                     <p:ajax event="rowEditCancel"  update=":form:msgs" />
 
-                                    <p:column headerText="Nombre Artista">
+                                    <p:column headerText="Nombre Album">
                                         <p:cellEditor>
                                             <f:facet name="output"><h:outputText value="#{car.nombre}" /></f:facet>
                                             <f:facet name="input"><p:inputText id="nombreAlbum" value="#{car.nombre}" style="width:100%"/></f:facet>
                                         </p:cellEditor>
                                     </p:column>
 
-                                    <p:column headerText="Artista Album">
+                                    <p:column headerText="Artista">
                                         <p:cellEditor>
                                             <f:facet name="output"><h:outputText value="#{car.artista}"/></f:facet>
                                             <f:facet name="input">
@@ -73,7 +66,7 @@
                                         </p:cellEditor>
                                     </p:column>
 
-                        
+
                                     <p:column style="width:35px">
                                         <p:rowEditor />
                                     </p:column>
