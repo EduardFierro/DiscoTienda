@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import logica.LogicaCompra;
@@ -22,7 +23,7 @@ import pojo.Album;
  * @author Eduard Fierro
  */
 @ManagedBean(name = "vistaCompra")
-@ViewScoped
+@SessionScoped
 public class vistaCompra implements Serializable{
 
     private String usuario;
@@ -93,10 +94,15 @@ public class vistaCompra implements Serializable{
         this.setCompra(logica.getCompra());
     }
 
-    public void finalizarCompra() {
+    public String finalizarCompra() {
         LogicaCompra logica = new LogicaCompra();
         logica.finalizarCompra(compra);
         total = logica.getTotal();
+        return ("recibo.xhtml");
+    }
+    public String LimpiarLista(){
+        compra.clear();
+        return("inicio.xhtml");
     }
 
     public String getUsuario() {

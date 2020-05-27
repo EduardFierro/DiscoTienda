@@ -15,16 +15,25 @@ h1 {
     padding: 0px;
     color: #D20005;
 }
-
+.pf-panel-bd {
+    background: #3AD56E;
+    height: 150px;
+    color:#CCCCCC;
+}
+pf-panel-bd1 {
+    background: #16f904;
+    height: 150px;
+    color:#CCCCCC;
+}
 
 a:link, a:visited {
-  color: #045491;
-  font-weight : bold;
-  text-decoration: none;
+    color: #045491;
+    font-weight : bold;
+    text-decoration: none;
 }
 
 a:link:hover, a:visited:hover  {
-  color: #045491;
-  font-weight : bold;
-  text-decoration : underline;
+    color: #045491;
+    font-weight : bold;
+    text-decoration : underline;
 }

@@ -21,16 +21,17 @@ public class LogicaCompra {
     private List<Album> listaAlbum;
     private List<Artista> listaArtistas;
     private List<Cancion> compra;
-    private double total=0;
-    
+    private double total = 0;
+
     public LogicaCompra(List<Cancion> listaCanciones, List<Album> listaAlbum, List<Artista> listaArtistas, List<Cancion> compra) {
         this.listaCanciones = listaCanciones;
         this.listaAlbum = listaAlbum;
         this.listaArtistas = listaArtistas;
         this.compra = compra;
     }
-    public LogicaCompra(){
-        
+
+    public LogicaCompra() {
+
     }
     /*public void porArtista(List<Artista>listaArtistas, List<String> nombreArtistas, List<String> compra){
      this.listaArtistas = listaArtistas;
@@ -47,6 +48,7 @@ public class LogicaCompra {
      this.nombreCanciones = nombreCanciones;
      this.compra = compra;
      }*/
+
     public void compraPorArtista(Artista art) {
         for (Artista a : listaArtistas) {
             if (a.getNombre().equals(art.getNombre())) {
@@ -64,11 +66,16 @@ public class LogicaCompra {
     }
 
     public void compraPorAlbum(Album al) {
+       
         for (Album d : listaAlbum) {
             if (d.getNombre().equals(al.getNombre())) {
                 for (Cancion c : listaCanciones) {
+
                     if (c.getAlbum().equals(al.getNombre())) {
-                        compra.add(c);
+                        if(!compra.contains(c)){
+                             compra.add(c);
+                        }
+                       
                     }
                 }
             }
@@ -76,17 +83,24 @@ public class LogicaCompra {
     }
 
     public void comprarPorCancion(Cancion can) {
+       
         for (Cancion c : listaCanciones) {
+
             if (c.getNombre().equals(can.getNombre())) {
-                compra.add(c);
+                if(!compra.contains(can)){
+                    compra.add(c);
+                }
+                
             }
         }
     }
-    public void finalizarCompra(List<Cancion> compra){
-        for(Cancion c : compra){
+
+    public void finalizarCompra(List<Cancion> compra) {
+        for (Cancion c : compra) {
             total += c.getPrecio();
         }
     }
+
     public List<Cancion> getListaCanciones() {
         return listaCanciones;
     }

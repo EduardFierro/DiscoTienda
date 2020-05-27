@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import pojo.Album;
 import pojo.Artista;
@@ -66,16 +67,19 @@ public class LogicaCrudArtista {
     }
     
     public boolean validarAlbum(){
+        if(listaAlbum== null){
+            listaAlbum = new ArrayList<>();
+        }
         if(listaAlbum.isEmpty()){
-            return false;
+            return true;
         }
         else{
-            return true;
+            return false;
         }
     }
     public void LecturaFichero(){
         try{
-            File archivo = new File ("Archivos/album.txt");
+            File archivo = new File ("C:/Users/Pavilion 15/Documents/NetBeansProjects/2020-1/mavenproject2/TiendaCanciones/album.txt");
             FileReader lector = new FileReader(archivo);
             BufferedReader br = new BufferedReader(lector);
             String linea = br.readLine();

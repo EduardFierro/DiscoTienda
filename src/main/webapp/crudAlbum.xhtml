@@ -12,7 +12,7 @@
         <ui:composition template="./Templates/plantillaMenu.xhtml">
 
             <ui:define name="content">
-                <p:panel style="widt:10px; height:590px;" >
+                <p:panel class="pf-panel-bd" style="widt:10px; height:590px;" >
                     <h:form id="form" enctype="multipart/form-data">
                         <font  face="arial" size="4" color="white" >
                             <center>
@@ -71,7 +71,7 @@
                                         <p:rowEditor />
                                     </p:column>
                                     <p:column style="width: 70px">
-                                        <h:commandLink value="Eliminar" actionListener="#{crudAlbum.eliminarAlbum(car)}" />
+                                        <h:commandLink immediate="true" value="Eliminar" actionListener="#{crudAlbum.eliminarAlbum(car)}" />
                                     </p:column>
                                 </p:dataTable>
                             </p:panel>
