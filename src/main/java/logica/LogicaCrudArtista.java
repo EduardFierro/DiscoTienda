@@ -79,7 +79,7 @@ public class LogicaCrudArtista {
     }
     public void LecturaFichero(){
         try{
-            File archivo = new File ("C:/Users/Pavilion 15/Documents/NetBeansProjects/2020-1/mavenproject2/TiendaCanciones/album.txt");
+            File archivo = new File ("C:\\Users\\Pavilion 15\\Documents\\NetBeansProjects\\2020-1\\mavenproject2\\TiendaCanciones\\album.txt");
             FileReader lector = new FileReader(archivo);
             BufferedReader br = new BufferedReader(lector);
             String linea = br.readLine();

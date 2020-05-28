@@ -76,11 +76,6 @@ public class vistaCompra implements Serializable{
         usuario = (String) context.getExternalContext().getSessionMap().get("usuario");
     }
 
-    public void agregarCarritoPorArtista(Artista artista) {
-        LogicaCompra logica = new LogicaCompra(listaCanciones, listaAlbum, listaArtistas, compra);
-        logica.compraPorArtista(artista);
-        compra = logica.getCompra();
-    }
 
     public void agregarCarritoPorAlbum(Album album) {
         LogicaCompra logica = new LogicaCompra(listaCanciones, listaAlbum, listaArtistas, compra);

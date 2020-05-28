@@ -42,9 +42,7 @@
                             <p:panel id="tablaAlbum">
                                 <p:growl id="msgs" showDetail="true"/>
                                 <p:dataTable id="album" var="car" value="#{crudAlbum.listaAlbum}" editable="true" style="margin-bottom:20px">
-                                    <f:facet name="header">
-                                        #{mensaje.Album}
-                                    </f:facet>
+                                    
                                     <p:ajax event="rowEdit"  update=":form:msgs" />
                                     <p:ajax event="rowEditCancel"  update=":form:msgs" />
 

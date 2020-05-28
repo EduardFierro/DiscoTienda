@@ -26,7 +26,7 @@ and open the template in the editor.
 
                     <p:dataTable id="cars1" var="car" value="#{vistaCompra.listaArtistas}" editable="false" style="margin-bottom:20px">
                         <f:facet name="header">
-                            #{mensaje.artistas}
+                          
                         </f:facet>
                         <p:column headerText="Nombre Artista">
                             <p:cellEditor>
@@ -55,9 +55,7 @@ and open the template in the editor.
                     </p:dataTable>
 
                     <p:dataTable id="cars2" var="car" value="#{vistaCompra.listaAlbum}" editable="false" style="margin-bottom:20px">
-                        <f:facet name="header">
-                            #{mensaje.Album}
-                        </f:facet>
+                      
                         <p:column headerText="Albums">
                             <p:cellEditor>
                                 <f:facet name="output"><h:outputText value="#{car.nombre}" /></f:facet>
@@ -106,7 +104,7 @@ and open the template in the editor.
                                 <p:commandButton value="actualizartabla" id="ajax" update="accordion"></p:commandButton>
                                 <p:panel id="pan">
                                 <p:dataTable id="cancionescompra" var="car" value="#{vistaCompra.compra}" style="margin-bottom:20px">
-                                    <f:facet name="header"> #{mensaje.canciones} </f:facet>
+                                   
 
                                     <p:column headerText="Nombre Cancion">
                                         <h:outputText value="#{car.nombre}" />

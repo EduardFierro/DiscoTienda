@@ -34,21 +34,6 @@ public class LogicaCompra {
 
     }
   
-    public void compraPorArtista(Artista art) {
-        for (Artista a : listaArtistas) {
-            if (a.getNombre().equals(art.getNombre())) {
-                for (Album d : listaAlbum) {
-                    if (d.getArtista().equals(art.getNombre())) {
-                        for (Cancion c : listaCanciones) {
-                            if (c.getAlbum().equals(d.getNombre())) {
-                                compra.add(c);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
 
     public void compraPorAlbum(Album al) {
        

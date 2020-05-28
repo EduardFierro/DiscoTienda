@@ -52,6 +52,7 @@ public class CrudArtista implements Serializable {
         nombre="";
         apellido="";
         fechana=null;
+        
     }
     public void eliminarArtista(Artista art){
         LogicaCrudArtista logica = new LogicaCrudArtista(lista, art);

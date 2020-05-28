@@ -43,9 +43,7 @@
                             <p:panel id="tablaArtistas">
                                 <p:growl id="msgs" showDetail="true"/>
                                 <p:dataTable id="cars1" var="car"  value="#{crudArtista.lista}" editable="true" style="margin-bottom:20px">
-                                    <f:facet name="header">
-                                        #{mensaje.artistas}
-                                    </f:facet>
+                                   
 
                                     <p:ajax event="rowEdit"  update=":form:msgs" />
                                     <p:ajax event="rowEditCancel"  update=":form:msgs" />
