@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Compra</title>
+    </h:head>
+    
+    <h:body>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <p:panel class="pf-panel-bd" style="widt:800px; height:590px;" >
+            <h:form>
+                
+                <br></br>
+                <h:outputText value="#{vistaCompra.usuario}"/>
+                <p:panelGrid class="pf-panel-bd" columns="2" layout="grid" styleClass="showcase-text-align-center">
+
+                    <p:dataTable id="cars1" var="car" value="#{vistaCompra.listaArtistas}" editable="false" style="margin-bottom:20px">
+                        <f:facet name="header">
+                          
+                        </f:facet>
+                        <p:column headerText="Nombre Artista">
+                            <p:cellEditor>
+                                <f:facet name="output"><h:outputText value="#{car.nombre}" /></f:facet>
+                                <f:facet name="input"><p:inputText id="nombreArtista" value="#{car.nombre}" style="width:100%"/></f:facet>
+                            </p:cellEditor>
+                        </p:column>
+
+                        <p:column headerText="Apellido Artista">
+                            <p:cellEditor>
+                                <f:facet name="output"><h:outputText value="#{car.apellido}" /></f:facet>
+                                <f:facet name="input" ><p:inputText  style="width:100%" value="#{car.apellido}"/></f:facet>
+                            </p:cellEditor>
+                        </p:column>
+
+                        <p:column headerText="Fecha Nacimiento">
+                            <p:cellEditor>
+                                <f:facet name="output"><h:outputText  value="#{car.fechana}"/></f:facet>
+                                <f:facet name="input">
+                                    <p:calendar id="fechaNacimiento" value="#{car.fechana}" required="true"/>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+
+                      
+                    </p:dataTable>
+
+                    <p:dataTable id="cars2" var="car" value="#{vistaCompra.listaAlbum}" editable="false" style="margin-bottom:20px">
+                      
+                        <p:column headerText="Albums">
+                            <p:cellEditor>
+                                <f:facet name="output"><h:outputText value="#{car.nombre}" /></f:facet>
+                                <f:facet name="input"><p:inputText id="nombreArtista" value="#{car.nombre}" style="width:100%"/></f:facet>
+                            </p:cellEditor>
+                        </p:column>
+
+                        <p:column headerText="Nombre Artista">
+                            <p:cellEditor>
+                                <f:facet name="output"><h:outputText value="#{car.artista}" /></f:facet>
+                                <f:facet name="input" ><p:inputText  style="width:100%" value="#{car.nombre}"/></f:facet>
+                            </p:cellEditor>
+                        </p:column>
+
+                        <p:column headerText="Comprar" style="width: 70px">
+                            <p:commandLink value="Comprar" actionListener="#{vistaCompra.agregarCarritoPorAlbum(car)}" />
+                        </p:column>
+                    </p:dataTable>
+
+                    <p:dataTable id="asdc" var="car" value="#{vistaCompra.listaCanciones}" editable="false" style="margin-bottom:20px">
+                        <f:facet name="header"> canciones </f:facet>
+                        <p:column headerText="Nombre Cancion">
+                            <h:outputText value="#{car.nombre}" />
+                        </p:column>
+
+                        <p:column headerText="Duracion">
+                            <h:outputText value="#{car.duracion}" />
+                        </p:column>
+
+                        <p:column headerText="Album">
+                            <h:outputText value="#{car.album}" />
+                        </p:column>
+
+                        <p:column headerText="Precio Cancion">
+                            <h:outputText value="#{car.precio}" />
+                        </p:column>
+
+                        <p:column headerText="comprar" style="width: 70px">
+                            <p:commandLink value="Comprar"  actionListener="#{vistaCompra.agregarCarritoPorCancion(car)}" />
+                        </p:column>
+                    </p:dataTable>
+                   
+                    <p:accordionPanel id="accordion">
+                        <p:tab title="Su compra" >
+                            <p:panelGrid id="pa" columns="1">
+                                <p:commandButton value="actualizartabla" id="ajax" update="accordion"></p:commandButton>
+                                <p:panel id="pan">
+                                <p:dataTable id="cancionescompra" var="car" value="#{vistaCompra.compra}" style="margin-bottom:20px">
+                                   
+
+                                    <p:column headerText="Nombre Cancion">
+                                        <h:outputText value="#{car.nombre}" />
+                                    </p:column>
+
+                                    <p:column headerText="Precio Cancion">
+                                        <h:outputText value="#{car.precio}" />
+                                    </p:column>
+
+                                </p:dataTable>
+                                </p:panel>
+                                <p:commandButton value="Finalizar Compra" action="#{vistaCompra.finalizarCompra()}"/>
+                            </p:panelGrid>
+                        </p:tab>
+                    </p:accordionPanel>
+
+                </p:panelGrid>  
+                <p:commandButton value="SALIR" action="inicio.xhtml"/>
+            </h:form>
+        </p:panel>
+    </h:body>
+</html>
+

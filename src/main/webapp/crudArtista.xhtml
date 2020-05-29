@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:body>
+       
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <ui:composition template="./Templates/plantillaMenu.xhtml">
+
+            <ui:define name="content">
+                <p:panel class="pf-panel-bd" style="widt:10px; height:590px;" >
+                    <h:form id="form" enctype="multipart/form-data">
+                        <font  face="arial" size="4" color="white" >
+                            <center>
+                                <p:outputLabel value="Agregar Artista" />
+                            </center>
+                        </font>   
+                        <font face="arial" size="3" color="white">
+                            <p:panelGrid  columns="2" layout="tabular" styleClass="showcase-text-align-center" >
+                                <p:outputLabel value="Nombre Artista" />
+                                <p:inputText id="nombre" value="#{crudArtista.nombre}" required="true"/>
+
+                                <p:outputLabel value="Apellido Artista" />
+                                <p:inputText id="apellido" value="#{crudArtista.apellido}" required="true"/>
+
+                                <p:outputLabel value="Fecha Nacimiento" />
+                                <p:calendar id="fechaNacimiento" value="#{crudArtista.fechana}" required="true"/>
+                            </p:panelGrid>
+                            <br></br>
+                            <center>
+                                <p:commandButton value="Agregar" id="ajax" update="tablaArtistas"  
+                                                 style="margin-right:20px;" styleClass="ui-priority-primary" actionListener="#{crudArtista.agregaArtista()}">
+                                <f:param name="productId" value="10" />
+                            </p:commandButton>
+                                </center>
+                            <br></br>
+                            <br></br>
+                            <p:panel id="tablaArtistas">
+                                <p:growl id="msgs" showDetail="true"/>
+                                <p:dataTable id="cars1" var="car"  value="#{crudArtista.lista}" editable="true" style="margin-bottom:20px">
+                                   
+
+                                    <p:ajax event="rowEdit"  update=":form:msgs" />
+                                    <p:ajax event="rowEditCancel"  update=":form:msgs" />
+
+                                    <p:column headerText="Nombre Artista">
+                                        <p:cellEditor>
+                                            <f:facet name="output"><h:outputText value="#{car.nombre}" /></f:facet>
+                                            <f:facet name="input"><p:inputText id="nombreArtista" value="#{car.nombre}" style="width:100%"/></f:facet>
+                                        </p:cellEditor>
+                                    </p:column>
+
+                                    <p:column headerText="Apellido Artista">
+                                        <p:cellEditor>
+                                            <f:facet name="output"><h:outputText value="#{car.apellido}" /></f:facet>
+                                            <f:facet name="input" ><p:inputText  style="width:100%" value="#{car.apellido}"/></f:facet>
+                                        </p:cellEditor>
+                                    </p:column>
+
+                                    <p:column headerText="Fecha Nacimiento">
+                                        <p:cellEditor>
+                                            <f:facet name="output"><h:outputText  value="#{car.fechana}"/></f:facet>
+                                            <f:facet name="input">
+                                                <p:calendar id="fechaNacimiento" value="#{car.fechana}" required="true"/>
+                                            </f:facet>
+                                        </p:cellEditor>
+                                    </p:column>
+                                    <p:column style="width:35px">
+                                        <p:rowEditor />
+                                    </p:column>
+                                    <p:column style="width: 70px">
+                                        <h:commandLink immediate="true" value="Eliminar" actionListener="#{crudArtista.eliminarArtista(car)}" />
+                                    </p:column>
+                                </p:dataTable>
+                            </p:panel>
+                        </font>
+                    </h:form>
+                </p:panel>
+            </ui:define>
+
+        </ui:composition>
+
+    </h:body>
+</html>

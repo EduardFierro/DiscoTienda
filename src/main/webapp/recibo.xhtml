@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Recibo ventas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <h:form>
+
+
+            <p:panelGrid id="pa" columns="1">
+                <p:panel  class="pf-panel-bd" id="pan">
+                    <p:dataTable id="cancionescompra" var="car" value="#{vistaCompra.compra}" style="margin-bottom:20px">
+                        <f:facet name="header"> #{mensaje.canciones} </f:facet>
+
+                        <p:column headerText="Nombre Cancion">
+                            <h:outputText value="#{car.nombre}" />
+                        </p:column>
+
+                        <p:column headerText="Precio Cancion">
+                            <h:outputText value="#{car.precio}" />
+                        </p:column>
+
+                    </p:dataTable>
+                   
+                </p:panel>
+                <h:outputLabel value="Valor total de su compra: "/>
+                    <h:outputLabel value="#{vistaCompra.total}"/>
+                <p:commandButton value="SALIR" action="#{vistaCompra.limpiarLista()}"/>
+            </p:panelGrid>
+
+
+        </h:form>
+    </h:body>
+</html>
